@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import logo from './../logo.svg';
 import './App.css';
 
@@ -31,7 +33,14 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
-export default App;
+function mapStateToProps(state) {
+  return state;
+}
+
+function mapDispatchToProps(dispatch) {
+  return dispatch;
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
