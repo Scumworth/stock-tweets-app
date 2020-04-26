@@ -20,9 +20,5 @@ function mapStateToProps(state) {
   return state;
 }
 
-function mapDispatchToProps(dispatch) {
-  return dispatch;
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SideBarContainer);
+export default connect(mapStateToProps)(SideBarContainer);
 

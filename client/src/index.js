@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { reducer } from "./stockTweets.js"
+import { reducer } from "./stockTweets"
 import './index.css';
 import App from './components/App';
 import logger from 'redux-logger';

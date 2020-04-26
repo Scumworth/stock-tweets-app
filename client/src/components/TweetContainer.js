@@ -20,8 +20,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-function mapDispatchToProps(dispatch) {
-  return dispatch;
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TweetContainer);
+export default connect(mapStateToProps)(TweetContainer);
