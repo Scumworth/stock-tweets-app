@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import logo from './../logo.svg';
+import Header from './Header';
+import Footer from './Footer';
+import SideBarContainer from './SideBarContainer';
+import TweetContainer from './TweetContainer';
 import './App.css';
+
+const styles = {
+  root: {
+    flexGrow: 1,
+    height: "100%",
+  },
+  gridContainer: {
+    background: "red",
+  }
+};
 
 class App extends Component {
   
@@ -23,13 +39,28 @@ class App extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro"> { this.state.apiResponse } </p>
+      <div className={classes.root}>
+        <Grid 
+          className={classes.gridContainer}
+          container 
+          direction='column'
+          spacing={3}
+        >
+          <Grid item>
+            <SideBarContainer /> 
+          </Grid>
+          <Grid item>
+            <Header />
+          </Grid>
+          <Grid item>
+            <TweetContainer />
+          </Grid>
+          <Grid item>
+            <Footer />
+          </Grid>
+        </Grid>
       </div>
     );
   }
@@ -43,4 +74,4 @@ function mapDispatchToProps(dispatch) {
   return { dispatch }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(App));

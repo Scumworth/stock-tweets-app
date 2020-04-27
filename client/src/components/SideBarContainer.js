@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import StockSearch from './StockSearch';
 
 class SideBarContainer extends Component {
   
@@ -10,7 +11,7 @@ class SideBarContainer extends Component {
   render() {
     return (
       <div>
-        <h1>SideBarContainer</h1>
+        <StockSearch />
       </div>
     )
   }
