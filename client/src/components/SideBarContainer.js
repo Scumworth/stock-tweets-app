@@ -1,25 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
 import StockSearch from './StockSearch';
 
-class SideBarContainer extends Component {
-  
-  static propTypes = {
-  }
+const useStyles = makeStyles({
+});
 
-  render() {
-    return (
-      <div>
-        <StockSearch />
-      </div>
-    )
-  }
+export default function SideBarContainer() {
+
+  return (
+    <div>
+      <StockSearch />
+    </div>
+  )
 }
 
-function mapStateToProps(state) {
-  return state;
-}
 
-export default connect(mapStateToProps)(SideBarContainer);
 
