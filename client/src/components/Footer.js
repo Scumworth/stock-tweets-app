@@ -1,8 +1,9 @@
 import React from 'react';
+import { Typography } from '@material-ui/core';
 
 const Footer = () => (
   <div>
-    <h1>Footer</h1>
+    <Typography>Footer</Typography>
   </div>
 );
 

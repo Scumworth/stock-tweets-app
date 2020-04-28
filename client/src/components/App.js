@@ -2,12 +2,12 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from "prop-types";
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import logo from './../logo.svg';
-import Header from './Header';
+
 import Footer from './Footer';
-import SideBarContainer from './SideBarContainer';
 import TweetContainer from './TweetContainer';
+import StockAppBar from './StockAppBar';
+
 import './App.css';
 
 const useStyles = makeStyles({
@@ -26,25 +26,9 @@ export default function App() {
   
   return (
     <div className={classes.root}>
-      <Grid 
-        className={classes.gridContainer}
-        container 
-        direction='column'
-        spacing={3}
-      >
-        <Grid item>
-          <SideBarContainer /> 
-        </Grid>
-        <Grid item>
-          <Header />
-        </Grid>
-        <Grid item>
-          <TweetContainer />
-        </Grid>
-        <Grid item>
-          <Footer />
-        </Grid>
-      </Grid>
+      <StockAppBar />
+      <TweetContainer />
+      <Footer />
     </div>
   );
 }
